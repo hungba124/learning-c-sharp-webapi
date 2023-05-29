@@ -1,3 +1,5 @@
+global using csharp002_webapi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
