@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/home/pham.van.hung/projects/learning/csharp002-webapi/csharp002-webapi.csproj": {}
+    "D:\\C-Sharp\\projects\\learning-c-sharp-webapi\\csharp002-webapi.csproj": {}
   },
   "projects": {
-    "/home/pham.van.hung/projects/learning/csharp002-webapi/csharp002-webapi.csproj": {
+    "D:\\C-Sharp\\projects\\learning-c-sharp-webapi\\csharp002-webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pham.van.hung/projects/learning/csharp002-webapi/csharp002-webapi.csproj",
+        "projectUniqueName": "D:\\C-Sharp\\projects\\learning-c-sharp-webapi\\csharp002-webapi.csproj",
         "projectName": "csharp002-webapi",
-        "projectPath": "/home/pham.van.hung/projects/learning/csharp002-webapi/csharp002-webapi.csproj",
-        "packagesPath": "/home/pham.van.hung/.nuget/packages/",
-        "outputPath": "/home/pham.van.hung/projects/learning/csharp002-webapi/obj/",
+        "projectPath": "D:\\C-Sharp\\projects\\learning-c-sharp-webapi\\csharp002-webapi.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\C-Sharp\\projects\\learning-c-sharp-webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/pham.van.hung/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "/usr/share/dotnet/sdk/7.0.302/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,6 +54,8 @@
               "version": "[7.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.5, )"
             },
@@ -83,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
