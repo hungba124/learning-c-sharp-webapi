@@ -2,7 +2,7 @@ global using csharp002_webapi.Models;
 global using csharp002_webapi.Services.CharacterService;
 global using csharp002_webapi.Dtos.Character;
 global using Microsoft.EntityFrameworkCore;
-global using Oracle.EntityFrameworkCore;
+global using Oracle.ManagedDataAccess.Client;
 global using csharp002_webapi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
