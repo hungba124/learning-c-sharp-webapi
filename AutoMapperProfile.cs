@@ -11,6 +11,7 @@ namespace csharp002_webapi
         {
             CreateMap<Character, GetCharacterDto>();
             CreateMap<AddCharacterDto, Character>();
+            CreateMap<UpdateCharacterDto, Character>();
         }
     }
 }

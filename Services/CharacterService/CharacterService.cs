@@ -42,9 +42,39 @@ namespace csharp002_webapi.Services.CharacterService
             var character = characters.FirstOrDefault(c => c.Id == id);
             if (character is not null)
                 serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
-            else {
+            else
+            {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Character not found";
+            }
+            return serviceResponse;
+        }
+
+        public async Task<ServiceResponse<GetCharacterDto>> UpdateCharacter(UpdateCharacterDto updatedCharacter)
+        {
+            var serviceResponse = new ServiceResponse<GetCharacterDto>();
+            try
+            {
+                var character = characters.FirstOrDefault(c => c.Id == updatedCharacter.Id);
+
+                if (character is null)
+                    throw new Exception ($"Character with Id '{updatedCharacter.Id}' not found");
+
+                _mapper.Map(UpdateCharacter, character);
+
+                character.Name = updatedCharacter.Name;
+                character.HitPoints = updatedCharacter.HitPoints;
+                character.Strength = updatedCharacter.Strength;
+                character.Defense = updatedCharacter.Defense;
+                character.Intelligence = updatedCharacter.Intelligence;
+                character.Class = updatedCharacter.Class;
+
+                serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
+            }
+            catch (Exception ex)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = ex.Message;
             }
             return serviceResponse;
         }
