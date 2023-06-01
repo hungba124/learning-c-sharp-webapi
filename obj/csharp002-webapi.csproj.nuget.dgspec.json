@@ -63,6 +63,14 @@
               "target": "Package",
               "version": "[7.0.5, )"
             },
+            "Oracle.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.21.9, )"
+            },
+            "Oracle.ManagedDataAccess.Core": {
+              "target": "Package",
+              "version": "[3.21.100, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
