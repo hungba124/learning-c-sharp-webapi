@@ -1,8 +1,4 @@
 global using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace csharp002_webapi.Services.CharacterService
 {
@@ -65,27 +61,28 @@ namespace csharp002_webapi.Services.CharacterService
         {
             var serviceResponse = new ServiceResponse<GetCharacterDto>();
             var dbCharacter = await _context.Characters.FirstOrDefaultAsync(c => c.Id == id);
+            //var dbCharacter = characters.FirstOrDefault(c => c.Id == id);
             if (dbCharacter is not null)
                 serviceResponse.Data = _mapper.Map<GetCharacterDto>(dbCharacter);
             else
             {
                 serviceResponse.Success = false;
-                serviceResponse.Message = "Character not found";
+                serviceResponse.Message = "Character not found!";
             }
             return serviceResponse;
         }
 
-        public async Task<ServiceResponse<GetCharacterDto>> UpdateCharacter(UpdateCharacterDto updatedCharacter)
+        public async Task<ServiceResponse<GetCharacterDto>> UpdateCharacter(int id, UpdateCharacterDto updatedCharacter)
         {
             var serviceResponse = new ServiceResponse<GetCharacterDto>();
             try
             {
-                var character = characters.FirstOrDefault(c => c.Id == updatedCharacter.Id);
+                var character = characters.FirstOrDefault(c => c.Id == id);
 
                 if (character is null)
                     throw new Exception($"Character with Id '{updatedCharacter.Id}' not found");
 
-                _mapper.Map(UpdateCharacter, character);
+                _mapper.Map(updatedCharacter, character);
 
                 character.Name = updatedCharacter.Name;
                 character.HitPoints = updatedCharacter.HitPoints;

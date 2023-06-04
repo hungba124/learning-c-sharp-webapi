@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace csharp002_webapi.Controllers
@@ -35,10 +31,10 @@ namespace csharp002_webapi.Controllers
             return Ok(await _characterService.AddCharacter(newCharacter));
         }
 
-        [HttpPut]
-        public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> UpdateCharacter(UpdateCharacterDto updatedCharacter)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> UpdateCharacter(int id, UpdateCharacterDto updatedCharacter)
         {
-            var response = await _characterService.UpdateCharacter(updatedCharacter);
+            var response = await _characterService.UpdateCharacter(id, updatedCharacter);
             if (response.Data is null)
             {
                 return NotFound(response);
