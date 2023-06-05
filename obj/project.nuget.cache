@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nHlIUxcIUP+jYWPJeGLUvmg1P7NO2Ocf8mzVeoxcDkYJFE8nAwTwplE1qTbEw1BABFmnuvkhbWmlsmxoununlA==",
+  "dgSpecHash": "1afs4qNjAUYqsKo9RZGislvULDTuyY9QZ7rN5relJUgOu3LmAfQUjWDl0NdbyBiFvRNGjRH77hvqnkUYgUzmuA==",
   "success": true,
   "projectFilePath": "D:\\C-Sharp\\projects\\learning-c-sharp-webapi\\csharp002-webapi.csproj",
   "expectedPackageFiles": [
@@ -31,10 +31,10 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\oracle.entityframeworkcore\\7.21.9\\oracle.entityframeworkcore.7.21.9.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.100\\oracle.manageddataaccess.core.3.21.100.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.diagnostics.performancecounter\\6.0.1\\system.diagnostics.performancecounter.6.0.1.nupkg.sha512",

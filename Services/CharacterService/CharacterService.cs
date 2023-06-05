@@ -1,4 +1,5 @@
 global using AutoMapper;
+using csharp002_webapi.Models;
 
 namespace csharp002_webapi.Services.CharacterService
 {
@@ -11,50 +12,23 @@ namespace csharp002_webapi.Services.CharacterService
         private readonly IMapper _mapper;
         private readonly DataContext _context;
 
+        private async Task<ServiceResponse<List<GetCharacterDto>>> ListAllCharacters(ServiceResponse<List<GetCharacterDto>> serviceResponse)
+        {
+            var dbCHaracters = await _context.Characters.ToListAsync();
+            serviceResponse.Data = dbCHaracters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
+            return serviceResponse;
+        }
+
         public CharacterService(IMapper mapper, DataContext context)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<ServiceResponse<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newCharacter)
-        {
-            var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
-            var character = _mapper.Map<Character>(newCharacter);
-            character.Id = characters.Max(c => c.Id) + 1;
-            characters.Add(character);
-            serviceResponse.Data = characters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
-            return serviceResponse;
-        }
-
-        public async Task<ServiceResponse<List<GetCharacterDto>>> DeleteCharacter(int id)
-        {
-            var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
-            try
-            {
-                var character = characters.FirstOrDefault(c => c.Id == id);
-
-                if (character is null)
-                    throw new Exception($"Character with Id '{id}' not found");
-
-                characters.Remove(character);
-
-                serviceResponse.Data = characters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
-            }
-            catch (Exception ex)
-            {
-                serviceResponse.Success = false;
-                serviceResponse.Message = ex.Message;
-            }
-            return serviceResponse;
-        }
-
         public async Task<ServiceResponse<List<GetCharacterDto>>> GetAllCharacters()
         {
             var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
-            var dbCHaracters = await _context.Characters.ToListAsync();
-            serviceResponse.Data = dbCHaracters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
-            return serviceResponse;
+            return await ListAllCharacters(serviceResponse);
         }
 
         public async Task<ServiceResponse<GetCharacterDto>> GetCharacterById(int id)
@@ -72,12 +46,46 @@ namespace csharp002_webapi.Services.CharacterService
             return serviceResponse;
         }
 
+        public async Task<ServiceResponse<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newCharacter)
+        {
+            var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
+            var character = _mapper.Map<Character>(newCharacter);
+            
+            _context.Characters.Add(character);
+            await _context.SaveChangesAsync();
+            
+            return await ListAllCharacters(serviceResponse);
+        }
+
+        public async Task<ServiceResponse<List<GetCharacterDto>>> DeleteCharacter(int id)
+        {
+            var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
+            try
+            {
+                var character = await _context.Characters.FindAsync(id);
+
+                if (character is null)
+                    throw new Exception($"Character with Id '{id}' not found");
+
+                _context.Characters.Remove(character);
+                await _context.SaveChangesAsync();
+
+                serviceResponse = await ListAllCharacters(serviceResponse);
+            }
+            catch (Exception ex)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = ex.Message;
+            }
+            return serviceResponse;
+        }
+
         public async Task<ServiceResponse<GetCharacterDto>> UpdateCharacter(int id, UpdateCharacterDto updatedCharacter)
         {
             var serviceResponse = new ServiceResponse<GetCharacterDto>();
             try
             {
-                var character = characters.FirstOrDefault(c => c.Id == id);
+                var character = await _context.Characters.FindAsync(id);
 
                 if (character is null)
                     throw new Exception($"Character with Id '{updatedCharacter.Id}' not found");
@@ -90,6 +98,8 @@ namespace csharp002_webapi.Services.CharacterService
                 character.Defense = updatedCharacter.Defense;
                 character.Intelligence = updatedCharacter.Intelligence;
                 character.Class = updatedCharacter.Class;
+
+                await _context.SaveChangesAsync();
 
                 serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
             }
