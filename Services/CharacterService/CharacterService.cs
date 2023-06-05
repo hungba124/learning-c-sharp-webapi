@@ -88,7 +88,7 @@ namespace csharp002_webapi.Services.CharacterService
                 var character = await _context.Characters.FindAsync(id);
 
                 if (character is null)
-                    throw new Exception($"Character with Id '{updatedCharacter.Id}' not found");
+                    throw new Exception($"Character with Id '{id}' not found");
 
                 _mapper.Map(updatedCharacter, character);
 
