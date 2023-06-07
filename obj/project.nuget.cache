@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QNgGKdjdbMBRFUHexh4Dj6KIVAaLesuvzmmx2g1rLMEOGnTO/pnBWTBuE+8+bg4uVqTeaw0DxmTXfLAIOUQLTA==",
+  "dgSpecHash": "IXAI9iHe6/wJiRP3lX+aCaD5xl4zfn5usfNPrbfJIoU49WL76ObxJ9mS11P9qSy1lFOdcKs7bM+C8NiRxt1f+A==",
   "success": true,
   "projectFilePath": "D:\\C-Sharp\\projects\\learning-c-sharp-webapi\\csharp002-webapi.csproj",
   "expectedPackageFiles": [
@@ -41,7 +41,10 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\oracle.entityframeworkcore\\7.21.9\\oracle.entityframeworkcore.7.21.9.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.100\\oracle.manageddataaccess.core.3.21.100.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\scrutor\\3.3.0\\scrutor.3.3.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.filters\\7.0.6\\swashbuckle.aspnetcore.filters.7.0.6.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.filters.abstractions\\7.0.6\\swashbuckle.aspnetcore.filters.abstractions.7.0.6.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
