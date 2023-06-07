@@ -4,6 +4,7 @@ global using csharp002_webapi.Dtos.Character;
 global using Microsoft.EntityFrameworkCore;
 global using Oracle.ManagedDataAccess.Client;
 global using csharp002_webapi.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<ICharacterService, CharacterService>();
+builder.Services.AddAuthentication().AddJwtBearer();
 
 var app = builder.Build();
 
