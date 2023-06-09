@@ -4,6 +4,7 @@ global using csharp002_webapi.Dtos.Character;
 global using Microsoft.EntityFrameworkCore;
 global using Oracle.ManagedDataAccess.Client;
 global using csharp002_webapi.Data;
+global using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<DataContext>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
@@ -31,6 +33,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<ICharacterService, CharacterService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddAuthentication().AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters

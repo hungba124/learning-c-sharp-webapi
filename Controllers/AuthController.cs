@@ -13,10 +13,27 @@ namespace csharp002_webapi.Controllers
     {
         public static User user = new User();
         private readonly IConfiguration _configuration;
+        private readonly IUserService _userService;
 
-        public AuthController(IConfiguration configuration)
+        public AuthController(IConfiguration configuration, IUserService userService)
         {
             _configuration = configuration;
+            _userService = userService;
+        }
+
+        [HttpGet, Authorize]
+        public ActionResult<string> GetMyName()
+        {
+            return Ok(_userService.GetMyName());
+            // var userName = User?.Identity?.Name;
+            // var role = User.FindFirstValue(ClaimTypes.Role);
+            // var rolesClaim = User.FindAll(ClaimTypes.Role);
+            // var roles = rolesClaim?.Select(c => c.Value).ToList();
+            // var roles2 = User?.Claims
+            //             .Where(c => c.Type == ClaimTypes.Role)
+            //             .Select(c => c.Value)
+            //             .ToList();
+            // return Ok(new {userName, role, roles, roles2});
         }
 
         [HttpPost("register")]
