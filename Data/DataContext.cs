@@ -16,8 +16,8 @@ namespace csharp002_webapi.Data
         {
             base.OnConfiguring(optionsBuilder);
             var builder = WebApplication.CreateBuilder();
-            optionsBuilder.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"));
-            //optionsBuilder.UseMySQL(builder.Configuration.GetConnectionString("MySqlConnection"));
+            // optionsBuilder.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"));
+            optionsBuilder.UseMySQL(builder.Configuration.GetConnectionString("MySqlConnection"));
         }
     }
 }
